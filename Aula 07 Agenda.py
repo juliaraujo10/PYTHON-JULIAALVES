@@ -5,7 +5,7 @@ from reportlab.pdfgen import canvas
 banco = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="",
+    password="@Julia0408",
     database="agenda"
 )
 
@@ -54,6 +54,55 @@ def excluirContato():
     cursor.execute("DELETE FROM contatos WHERE id=" + str(valorId))
     banco.commit()
 
+def carregarContatoParaEdicao():
+    linhaContato = listarContatos.tabelaContatos.currentRow()
+    
+    cursor = banco.cursor()
+    comando_SQL = "SELECT * FROM contatos"
+    cursor.execute(comando_SQL)
+    contatos_lidos = cursor.fetchall()
+    
+    contato = contatos_lidos[linhaContato]
+    
+    agenda.labelNome.setText(contato[1])
+    agenda.labelEmail.setText(contato[2])
+    agenda.labelTelefone.setText(contato[3])
+    
+    if contato[4] == "Residencial":
+        agenda.rbResidencial.setChecked(True)
+    elif contato[4] == "Celular":
+        agenda.rbCelular.setChecked(True)
+    else:
+        agenda.rbResidencial.setChecked(False)
+        agenda.rbCelular.setChecked(False)
+        
+    agenda.btnCadastro.clicked.disconnect()  # Remove o conector antigo
+    agenda.btnCadastro.clicked.connect(lambda: atualizarContato(contato[0]))  # Conecta ao novo método
+
+def atualizarContato(id):
+    campoNome = agenda.labelNome.text()
+    campoEmail = agenda.labelEmail.text()
+    campoTelefone = agenda.labelTelefone.text()
+    
+    if agenda.rbResidencial.isChecked():
+        tipoTelefone = "Residencial"
+    elif agenda.rbCelular.isChecked():
+        tipoTelefone = "Celular"
+    else:
+        tipoTelefone = "Não informado!"
+    
+    cursor = banco.cursor()
+    comando_SQL = "UPDATE contatos SET nome=%s, email=%s, telefone=%s, tipoTelefone=%s WHERE id=%s"
+    dados = (str(campoNome), str(campoEmail), str(campoTelefone), tipoTelefone, id)
+    cursor.execute(comando_SQL, dados)
+    banco.commit()
+    
+    # Reconectar o botão de cadastro ao método original
+    agenda.btnCadastro.clicked.disconnect()
+    agenda.btnCadastro.clicked.connect(cadastrarContato)
+    agenda.close()
+    consultarContatos()
+
 def gerarPdf():
     cursor = banco.cursor()
     comando_SQL = "SELECT * FROM contatos"
@@ -92,6 +141,7 @@ agenda.btnListar.clicked.connect(consultarContatos)
 
 listarContatos.btnGerarPdf.clicked.connect(gerarPdf)
 listarContatos.btnExcluirContato.clicked.connect(excluirContato)
+listarContatos.btnAlterarContato.clicked.connect(carregarContatoParaEdicao)  # Conecta o botão de alterar
 
 agenda.show()
 app.exec()
