@@ -16,6 +16,12 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+	background-color:rgb(150, 75, 255);
+	border-radius: 20px;
+}</string>
+  </property>
   <property name="animated">
    <bool>true</bool>
   </property>
@@ -31,11 +37,15 @@
     </property>
     <property name="font">
      <font>
-      <family>Lucida Fax</family>
+      <family>MV Boli</family>
       <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;MV Boli&quot;;</string>
     </property>
     <property name="text">
      <string>Nome:</string>
@@ -52,11 +62,15 @@
     </property>
     <property name="font">
      <font>
-      <family>Lucida Fax</family>
+      <family>MV Boli</family>
       <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;MV Boli&quot;;</string>
     </property>
     <property name="text">
      <string>Email:</string>
@@ -73,11 +87,15 @@
     </property>
     <property name="font">
      <font>
-      <family>Lucida Fax</family>
+      <family>MV Boli</family>
       <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;MV Boli&quot;;</string>
     </property>
     <property name="text">
      <string>Telefone:</string>
@@ -94,15 +112,17 @@
     </property>
     <property name="font">
      <font>
-      <family>Lucida Fax</family>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>MV Boli</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
-	background-color: rgb(249, 192, 28);
+	font: 8pt &quot;MV Boli&quot;;
+	background-color: rgb(170, 85, 127);
 	border-radius: 20px;
 }</string>
     </property>
@@ -160,11 +180,15 @@
     </property>
     <property name="font">
      <font>
-      <family>Lucida Fax</family>
+      <family>MV Boli</family>
       <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;MV Boli&quot;;</string>
     </property>
     <property name="text">
      <string>Residencial</string>
@@ -181,11 +205,15 @@
     </property>
     <property name="font">
      <font>
-      <family>Lucida Fax</family>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>MV Boli</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;MV Boli&quot;;</string>
     </property>
     <property name="text">
      <string>Celular</string>
@@ -202,11 +230,18 @@
     </property>
     <property name="font">
      <font>
-      <family>Lucida Fax</family>
+      <family>MV Boli</family>
       <pointsize>22</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <underline>true</underline>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MV Boli&quot;;
+text-decoration: underline;
+font: 22pt &quot;MV Boli&quot;;</string>
     </property>
     <property name="text">
      <string>AGENDA</string>
@@ -223,15 +258,17 @@
     </property>
     <property name="font">
      <font>
-      <family>Lucida Fax</family>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>MV Boli</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
-	background-color: rgb(249, 192, 28);
+	font: 8pt &quot;MV Boli&quot;;
+	background-color: rgb(170, 85, 127);
 	border-radius: 20px;
 }</string>
     </property>
